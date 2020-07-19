@@ -3,11 +3,7 @@ import random
 
 def main():
     show_header()
-
-    player = "You"
-    ai = "Computer"
-
-    play_game(player, ai)
+    play_game("You", "Computer")
 
 
 def show_header():
@@ -28,7 +24,7 @@ def play_game(player_one, player_two):
         roll2 = random.choice(rolls)
 
         if not roll1:
-            print("Can't play that - exiting")
+            print("Try agin")
             continue
 
         print(f"{player_one} roll {roll1}")
