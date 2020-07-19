@@ -27,31 +27,33 @@ def play_game(player_one, player_two):
         roll1 = get_roll(player_one, rolls)
         roll2 = random.choice(rolls)
 
-    if not roll1:
-        print("Can't play that - exiting")
-        return
+        if not roll1:
+            print("Can't play that - exiting")
+            continue
 
-    print(f"{player_one} rolls {roll1}")
-    print(f"{player_two} rolls {roll2}")
+        print(f"{player_one} roll {roll1}")
+        print(f"{player_two} rolls {roll2}")
 
-    winner = check_for_winning_throw(player_one, player_two, roll1, roll2)
+        winner = check_for_winning_throw(player_one, player_two, roll1, roll2)
 
-    if winner is None:
-        print("This round was a tie")
-    else:
-        print(f'{winner} takes this round')
-        if winner == player_one:
-            wins_p1 += 1
-        elif winner == player_two:
-            wins_p2 += 1
+        if winner is None:
+            print("This round was a tie")
+        else:
+            print(f'{winner} takes this round')
 
+            if winner == player_one:
+                wins_p1 += 1
+            elif winner == player_two:
+                wins_p2 += 1
+        print(f"Score is {player_one}: {wins_p1} and {player_two}: {wins_p2} ")
+        print()
 
-    if wins_p1 >= rounds:
-        overall_winner = player_one
-    else:
-        overall_winner = player_one
+        if wins_p1 >= rounds:
+            overall_winner = player_one
+        else:
+            overall_winner = player_one
 
-    print(f"{overall_winner} wins")
+        print(f"{overall_winner} wins")
 
 
 def check_for_winning_throw(player_one, player_two, roll1, roll2):
