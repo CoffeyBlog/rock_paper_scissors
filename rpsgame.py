@@ -71,7 +71,7 @@ def find_winner(wins, names):
 def check_for_winning_throw(player_1, player_2, roll1, roll2):
     winner = None
     if roll1 == roll2:
-        print("Tie Game!")
+        print("The play was tied!")
 
     outcome = rolls.get(roll1, {})
     if roll2 in outcome.get('defeats'):
