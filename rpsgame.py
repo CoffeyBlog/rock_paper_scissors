@@ -29,7 +29,6 @@ def show_header():
 
 def play_game(player_one, player_two):
     wins = {player_one: 0, player_two: 0}
-
     roll_names = list(rolls.keys())
 
     while not find_winner(wins, wins.keys()):
@@ -51,8 +50,11 @@ def play_game(player_one, player_two):
             print(f'{winner} takes this round')
             wins[winner] += 1
 
-        print(f"Score is {player_one}: [wins_p1] and {player_two}: [wins_p2] ")
+        print(f"Score is {player_one}: {wins[player_one]} and {player_two}: {wins[player_two]} ")
         print()
+
+    overall_winner = find_winner(wins,wins.keys())
+    print(f"{overall_winner} wins tha game!")
 
 
 def find_winner(wins, names):
@@ -60,6 +62,7 @@ def find_winner(wins, names):
     for name in names:
         if wins.get(name, 0) >= best_of:
             return name
+
     return None
 
 
@@ -89,7 +92,7 @@ def get_roll(player_name, roll_names):
         print(f"Sorry {player_name}, {text} is not a valid play!")
         return None
 
-    return rolls[selected_index]
+    return rolls_names[selected_index]
 
 
 if __name__ == '__main__':
