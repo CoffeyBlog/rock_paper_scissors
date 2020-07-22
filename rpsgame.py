@@ -22,9 +22,9 @@ def main():
 
 
 def show_header():
-    print("-------------------------------------------")
-    print("----- Rock Paper Scissors Version One -----")
-    print("-------------------------------------------")
+    print("---------------------------")
+    print("   Rock Paper Scissors")
+    print("---------------------------")
 
 
 def play_game(player_1, player_2):
